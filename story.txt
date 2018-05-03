@@ -1,0 +1,21 @@
+I decided that I wanted to listen to some "new" tunes in my van as I travel between sites (exchanges) for work.
+My van has a quite nice mp3 player that isn't scared by a 32GB usb stick, as previous ones have been.
+
+So I decide that I'd like 32GB of modern DJ sets on my stick.
+Being of a certain age, I go for torrents first, and come up blank.. Ok. yeah. Torrents are old news ( I read that in a newspaper ! )
+So... Google. d.j. sets. .... www.global-sets.com
+Looks good, updated.. daily.. ish. nice. like the tunes.. how do I ? oh. ok. a download link.... *external site* *advert for milfs* <sigh>
+*clicks link* *link works* ok. cool. that's 100MB. Lets go for the next one.... *more milfs*... Ummm... this is gonna take ages.
+
+Bugger this. I'm gonna automate it..
+
+Step one, Scrape front door : wget --mirror -A "*.html" -nc www.global-sets.com
+But not for too long, I needed about 160MB of raw html.
+
+Step 2, extract zippyshare.com links from pages : grep -r zipp ./www.global-sets.com/*| grep href | grep -o '".*"' | sed 's/"//g'> urls.txt
+
+Step 3, Ummm.... just run grumble.sh with urls.txt as an argument. It reads the file a line at a time, gets the page source, extracts the javascript for the download button, sticks that into an array, then rearranges the array items and does some maths ( in echo ! ) in order to generate the direct URL which is then passed to wget.
+
+And voila !! A whole 32GB of DJ sets. 11 whole days if I were to play it 24/7 ! will probably last me 2 months or so.
+
+Enjoy responsibly. Might not be legal.
