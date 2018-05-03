@@ -9,4 +9,4 @@ Then run the second line to extract the zippyshare pages to produce a list of do
 
 grumble.sh is definately runnable and works well. Make sure you are in the root dir of your usb stick. It will grind to a halt when wget runs out of space !
 
-Read story.txt if you want to know why I made this.
+Read story.txt for details and motivations.
