@@ -1,4 +1,7 @@
 # Tuuuuunes
+This only worked about twice. 
+It is now borken. only here for archival resons.
+
 Script / Info for filling a USB stick with the latest DJ sets.
 
 Requires wget and lynx. I could have probably not used lynx but hey, I like it !
